@@ -189,12 +189,12 @@ public class cronoClase {
                     continue;
                 }
 
+                System.out.println('\n' + '\n' + "MODO ESTUDIANTE");
+
                 if (contadorTareas[0] == 0 && contadorTareas[1] == 0 && contadorTareas[2] == 0) {
                     System.out.println("\nNo hay tareas registradas. El profesor debe registrar tareas primero.\n");
                     continue;
                 }
-
-                System.out.println('\n' + '\n' + "MODO ESTUDIANTE");
                 System.out.println("Las tareas asignadas por el docente son: ");
 
                 for (int i = 0; i < materias.length; i++) {
