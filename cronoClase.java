@@ -61,7 +61,7 @@ public class cronoClase {
         int[] contadorTareas = { 0, 0, 0 };
 
         while (true) {
-            System.out.println("\n=== CRONOCLASES | MENU PRINCIPAL ===");
+            System.out.println("\n=== CRONOCLASES | MENU PRINCIPAL === \n");
             System.out.println("1. Modo Profesor");
             System.out.println("2. Modo Estudiante");
             System.out.println("3. Salir");
@@ -85,7 +85,7 @@ public class cronoClase {
                     System.out.print("Contraseña: ");
                     String password = sc.nextLine();
                     if (usuario.equals("profesor") && password.equals("profesor")) {
-                        System.out.println("¡Bienvenido Profesor al Sistema de Gestión de Actividades!");
+                        System.out.println("\n ¡Bienvenido Profesor al Sistema de Gestión de Actividades!");
                         break;
                     } else {
                         intentos++;
@@ -116,6 +116,7 @@ public class cronoClase {
                             '\n' + "¿Cuantas actividades desea ingresar para la " + materias[indexMatEle] + "?" + '\n');
                     int numTareas = sc.nextInt();
                     sc.nextLine();
+                    System.out.println("\n ");
 
                     for (int i = contadorTareas[indexMatEle]; i < numTareas + contadorTareas[indexMatEle]; i++) {
                         /*
@@ -131,6 +132,7 @@ public class cronoClase {
 
                         System.out.println("Ingrese el nombre de la tarea " + (i + 1) + '\n');
                         tareas[indexMatEle][i] = sc.nextLine();
+                        System.out.println("\n ");
 
                         System.out.println("Ingrese la fecha de entrega de la tarea " + (i + 1) + '\n' + '\n'
                                 + " Escriba el día como número entero" + '\n');
@@ -157,7 +159,7 @@ public class cronoClase {
 
                     if (registrarAgain == 0) {
                         for (int i = 0; i < materias.length; i++) {
-                            System.out.println("Las actividades ingresadas para la " + materias[i] + " son" + '\n');
+                            System.out.println("\n ===Las actividades ingresadas para la " + materias[i] + " son ===" + '\n');
                             for (int j = 0; j < contadorTareas[i]; j++) {
                                 System.out.println(tareas[i][j] + ": " + fechasTareas[i][j]);
                             }
@@ -167,7 +169,7 @@ public class cronoClase {
                     }
                 }
             }            if (opcion == 2) {
-                /* MODO ESTUDIANTE */
+               
                 int intentos = 0;
                 while (intentos < 3) {
                     System.out.println("\nLogin de Estudiante");
@@ -176,7 +178,7 @@ public class cronoClase {
                     System.out.print("Contraseña: ");
                     String password = sc.nextLine();
                     if (usuario.equals("estudiante") && password.equals("estudiante")) {
-                        System.out.println("¡Bienvenido Estudiante al Sistema de Gestión de Actividades!");
+                        System.out.println(  "\n ¡Bienvenido Estudiante al Sistema de Gestión de Actividades! \n");
                         break;
                     } else {
                         intentos++;
@@ -189,13 +191,13 @@ public class cronoClase {
                     continue;
                 }
 
-                System.out.println('\n' + '\n' + "MODO ESTUDIANTE");
+               /*  System.out.println('\n' + '\n' + "MODO ESTUDIANTE"); */
 
                 if (contadorTareas[0] == 0 && contadorTareas[1] == 0 && contadorTareas[2] == 0) {
                     System.out.println("\nNo hay tareas registradas. El profesor debe registrar tareas primero.\n");
                     continue;
                 }
-                System.out.println("Las tareas asignadas por el docente son: ");
+                System.out.println("Las tareas asignadas por el docente son: \n");
 
                 for (int i = 0; i < materias.length; i++) {
                     System.out.println("Actividades " + materias[i] + ": " + '\n');
@@ -269,7 +271,7 @@ public class cronoClase {
 
                     if (registrarAgain == 0) {
                         for (int i = 0; i < materias.length; i++) {
-                            System.out.println("Fechas de entrega de actividades:  " + materias[i] + ": " + '\n');
+                            System.out.println("\n ===Fechas de entrega de actividades:  " + materias[i] + ": ===" + '\n');
                             for (int j = 0; j < contadorTareas[i]; j++) {
                                 if (fechasTareasE[i][j] != null) {
                                     System.out.println(tareas[i][j] + ": " + fechasTareasE[i][j] + plazoCheck[i][j]);
